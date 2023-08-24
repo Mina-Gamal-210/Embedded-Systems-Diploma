@@ -1,0 +1,17 @@
+// Minimum Number Detector
+
+#include "stdio.h"
+
+
+void main() {
+
+	float a,b;
+	printf("121Please Enter the 2 Numbers\n");
+	fflush(stdin);
+	fflush(stdout);
+	scanf("%f %f", &a, &b);
+
+	float z  = (a<b)? a : b ;
+	printf("The minimum Number is: %f\n",z);
+
+}
