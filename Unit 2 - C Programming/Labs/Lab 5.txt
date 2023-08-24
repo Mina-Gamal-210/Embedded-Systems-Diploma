@@ -1,0 +1,29 @@
+// Students Average Degree Calculator
+
+#include "stdio.h"
+
+
+void main() {
+
+	float degree, sum = 0, average;
+	int i,n;
+
+	printf("Enter number of students : ");
+	fflush(stdin);
+	fflush(stdout);
+	scanf("%d",&n);
+
+	for(i=1; i<=n ; i++){
+		printf("\nStudent %d degree: ",i);
+		fflush(stdin);
+		fflush(stdout);
+		scanf("%f",&degree);
+		sum += degree;
+
+	}
+
+	average = sum / n;
+
+	printf("Students Avreage Degree is %f: \n",average);
+
+}
