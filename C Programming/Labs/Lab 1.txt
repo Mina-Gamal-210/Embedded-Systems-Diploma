@@ -1,0 +1,40 @@
+// Circle Area and Circumference Calculator
+
+#include "stdio.h"
+
+
+void main() {
+
+	float radius;
+	char choice;
+	float area, circumference;
+	float pi = 22.0/7;
+
+	printf("Please Enter circle radius: \n");
+
+	fflush(stdin);
+	fflush(stdout);
+
+	scanf("%f", &radius);
+	printf("Enter your Choice\na- Area\nb- Circumference\n");
+	fflush(stdin);
+	fflush(stdout);
+	scanf("%c", &choice);
+
+	if(choice == 'a')
+	{
+		area = pi * radius * radius;
+		printf("Circle area = %0.3f\n",area);
+	}
+
+	else if(choice == 'b')
+	{circumference = 2 * pi * radius;
+	printf("Circle circumference = %0.3f\n",circumference);
+	}
+
+	else
+	{printf("You have Entered a wrong choice\n");}
+
+
+
+}
