@@ -1,0 +1,27 @@
+// Largest Number Detector
+
+
+#include "stdio.h"
+
+
+void main(){
+
+	float a, b, c;
+
+
+	printf("Please Enter 3 Numbers: \n");
+
+	fflush(stdin);
+	fflush(stdout);
+
+	scanf("%f %f %f", &a,&b ,&c);
+
+	float z  = (a>b) ? a: b;
+
+	z  = (z>c)? z: c;
+
+
+	printf("The Largest Number is %f", z);
+
+
+}
