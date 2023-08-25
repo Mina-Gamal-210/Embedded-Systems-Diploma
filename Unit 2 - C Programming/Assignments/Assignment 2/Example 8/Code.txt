@@ -1,0 +1,56 @@
+#include "stdio.h"
+
+
+void main(){
+
+	char o;
+	float x , y;
+
+
+
+	printf("Enter operator either + or - or * or / : ");
+	fflush(stdin);
+	fflush(stdout);
+
+	scanf("%c", &o);
+
+	printf("Enter two operands: ");
+	fflush(stdin);
+	fflush(stdout);
+
+	scanf("%f %f", &x, &y);
+
+
+	switch(o){
+
+	case '+':
+		printf("%f + %f = %f", x , y , x+y);
+		break;
+
+	case '-':
+		printf("%f - %f = %f", x , y , x-y);
+		break;
+
+	case '*':
+		printf("%f * %f = %f", x , y , x*y);
+		break;
+
+	case '/':
+		printf("%f / %f = %f", x , y , x/y);
+		break;
+
+	default:
+		printf("You entered a wrong operand");
+		break;
+
+
+	}
+
+
+}
+
+
+
+
+
+
