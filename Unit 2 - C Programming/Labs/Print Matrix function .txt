@@ -1,0 +1,28 @@
+/*
+
+Made by Mina Gamal ^_^
+
+*/
+
+
+// to print an integer matrix
+// call print_mat(matrix name, number of rows, number of cols, size of array type)
+// to print a float matrix just replace int in the address pointer with float
+
+
+void print_mat(int x, char r , char c, char s ){
+
+	int i, j;
+
+	for(i=0;i<r;i++)
+	{
+		for(j=0;j<c;j++)
+		{
+            int* address = (int) x + (j*s) + (i*c*s);
+			printf("%d \t", *address);
+		}
+
+		printf("\n");
+	}
+
+}
