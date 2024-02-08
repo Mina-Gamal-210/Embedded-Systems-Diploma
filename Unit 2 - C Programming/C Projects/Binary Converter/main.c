@@ -6,39 +6,42 @@
 
 void Missed_Bits(int number , int bits)
 {
-	int needed = ceil((float)log2(number));
+	int Needed_Bits = ceil((float)log2(number));
 
-	if(bits < needed )
-		printf("\n\nnumbers of bits isn't sufficient to preview this number, you need at least %d bits\n\nThere are missed Bits = %d", needed,needed-bits);
+	if(bits < Needed_Bits )
+		printf("\n\nnumbers of bits isn't sufficient to preview this number, you need at least %d bits\n\nThere are missed Bits = %d", Needed_Bits,Needed_Bits-bits);
 }
 
 
 int main(void)
 {
 
-	enum type {Decimal=1,Hexadecimal,Octal};
+	enum Number_Type {Decimal=1,Hexadecimal,Octal};
 	enum decision {wrong,menu,exit};
-	enum type choice;
-	int c;
-	int x;
+
+	enum Number_Type choice;
+	int user_choice;
+	int Number;
 	int i;
-	int n;
-	int b;
+	int Number_of_Bit;
+	int Bit_value;
 	char v;
 	enum decision flag;
+
+
 	menu:
-	system("cls");
+	system("cls");  // Clear the screen
 	printf("\t\t\t=====================================\n");
 	printf("\t\t\t=          Binary Converter         =\n");
 	printf("\t\t\t=====================================\n\n\n\n");
-	printf(" Modes: \n");
+	printf(" Modes: \n\n");
 	printf(" 1- Decimal to Binary\n");
 	printf(" 2- Hexadecimal to Binary\n");
 	printf(" 3- Octal to Binary\n");
 	printf("\nEnter your Choice: ");
 	fflush(stdout);
-	scanf("%d",&c);
-	choice = c;
+	scanf("%d",&user_choice);
+	choice = user_choice;
 
 	system("cls");
 
@@ -51,14 +54,11 @@ int main(void)
 
 		printf("Enter the number in Decimal: ");
 		fflush(stdout);
-		scanf("%d",&x);
+		scanf("%d",&Number);
 		printf("\nEnter the number of bits: ");
 		fflush(stdout);
-		scanf("%d",&n);
-		printf("\n\nThe number %d in Binary is ",x);
-
-
-
+		scanf("%d",&Number_of_Bit);
+		printf("\n\nThe number %d in Binary is ",Number);
 		break;
 
 	case Hexadecimal:
@@ -68,12 +68,11 @@ int main(void)
 
 		printf("Enter the number in Hexadecimal: ");
 		fflush(stdout);
-		scanf("%X",&x);
+		scanf("%X",&Number);
 		printf("\nEnter the number of bits: ");
 		fflush(stdout);
-		scanf("%d",&n);
-		printf("\nThe number %X in Binary is ",x);
-
+		scanf("%d",&Number_of_Bit);
+		printf("\nThe number %X in Binary is ",Number);
 		break;
 
 
@@ -82,31 +81,30 @@ int main(void)
 		printf("\t\t\t=     Octal to Binary Converter     =\n");
 		printf("\t\t\t=====================================\n\n\n\n");
 
-		printf("Enter the number in Hexadecimal: ");
+		printf("Enter the number in Octal: ");
 		fflush(stdout);
-		scanf("%o",&x);
+		scanf("%o",&Number);
 		printf("\nEnter the number of bits: ");
 		fflush(stdout);
-		scanf("%d",&n);
-		printf("\nThe number %o in Binary is ",x);
-
+		scanf("%d",&Number_of_Bit);
+		printf("\nThe number %o in Binary is ",Number);
 		break;
 
 	}
 
 
-   int counter = 1;
-   int spacing = n % 4;
+	int counter = 1;
+	int spacing = Number_of_Bit % 4;
 
-   if(spacing == 0)
-	   spacing = 4;
+	if(spacing == 0)
+		spacing = 4;
 
-	for(i=n-1 ;i>=0; i--)
+	for(i=Number_of_Bit-1 ;i>=0; i--)
 	{
 
-		b = (x<<(n-1-i)) >> (n-1) & 1;
+		Bit_value = (Number<<(Number_of_Bit-1-i)) >> (Number_of_Bit-1) & 1;
 
-		if(b==1)
+		if(Bit_value==1)
 			printf("1");
 		else
 			printf("0");
@@ -117,12 +115,12 @@ int main(void)
 			spacing+=4;
 		}
 
-		 counter++;
+		counter++;
 
 
 	}
 
-	Missed_Bits(x,n);
+	Missed_Bits(Number,Number_of_Bit);
 
 	printf("\n\n\n\n\nEnter 'M' to go to the main menu and 'E' to exit: ");
 	fflush(stdout);fflush(stdin);
@@ -147,8 +145,8 @@ int main(void)
 	{
 
 		printf("\n\nExiting");
-		for(i=0;i<=4;i++){
-			printf(".");
+		for(i=0;i<=2;i++){
+			printf("..");
 			sleep(1);
 		}
 
