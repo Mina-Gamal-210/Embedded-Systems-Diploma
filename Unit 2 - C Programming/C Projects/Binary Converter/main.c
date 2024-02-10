@@ -1,7 +1,7 @@
 #include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
-#include "time.h"
+#include "stdlib.h"    // to use system("cls") function which clears the console
+#include "math.h"     //  to use log2() function
+#include "unistd.h"  //   to use sleep() function to add some delay between printing dots when Exiting
 
 
 void Missed_Bits(int number , int bits)
