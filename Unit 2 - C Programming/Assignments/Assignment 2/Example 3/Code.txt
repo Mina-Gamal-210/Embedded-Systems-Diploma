@@ -1,0 +1,31 @@
+#include "stdio.h"
+
+
+void main(){
+
+	  float x,y,z, largest_number;
+
+
+
+		printf("Enter three numbers: ");
+		fflush(stdin);
+		fflush(stdout);
+		scanf("%f %f %f",&x,&y,&z);
+
+		largest_number = (x>y) ? x:y ;
+		largest_number = (largest_number > z) ? largest_number :z;
+
+		printf("Largest number = %f",largest_number);
+
+
+
+
+
+
+	}
+
+
+
+
+
+
