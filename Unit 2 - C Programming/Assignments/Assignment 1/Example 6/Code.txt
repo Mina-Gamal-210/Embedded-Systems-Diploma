@@ -1,0 +1,24 @@
+#include "stdio.h"
+
+
+void main(){
+
+	float a,b,z;
+
+	printf("Enter the value of a: ");
+	fflush(stdin);
+	fflush(stdout);
+	scanf("%f",&a);
+	printf("Enter the value of b: ");
+	fflush(stdin);
+	fflush(stdout);
+	scanf("%f",&b);
+
+	z = a;
+	a = b;
+	b = z;
+
+	printf("After swapping, value of a = %f \n", a);
+	printf("After swapping, value of b = %f \n", b);
+
+}
