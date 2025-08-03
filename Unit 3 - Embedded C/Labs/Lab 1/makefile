@@ -9,7 +9,7 @@ AS_SRC=$(wildcard *.s)
 AS_OBJ=$(AS_SRC:.s=.o)
 LS=$(wildcard *.ld)
 LIBS=
-Project_Name=mina
+Project_Name=Program
 
 
 all:$(Project_Name).bin
