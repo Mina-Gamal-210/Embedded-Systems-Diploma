@@ -1,0 +1,47 @@
+/* Linker Script for STM32F103C8T6 */
+/* Written by Eng.Mina Gamal */
+
+ENTRY(Reset_Handler)
+
+MEMORY
+{
+
+  FLASH (rx) : ORIGIN = 0x08000000, LENGTH = 64K
+  SRAM (rwx) : ORIGIN = 0x20000000, LENGTH = 20K
+ 
+}
+
+
+SECTIONS
+{
+
+	.text :
+	{ 
+	  *(.vectors*)
+		*(.text*)
+		*(.rodata*)
+		. = ALIGN(4);
+		_TEXT_END = .;
+	}> FLASH
+
+
+	.data :
+	{ 
+	   _DATA_START = .;
+		 *(.data*)
+		 . = ALIGN(4);
+		 _DATA_END = .;
+	}> SRAM AT> FLASH
+
+
+	.bss :
+	{ 
+	  _BSS_START = .;
+		*(.bss*)
+		. = ALIGN(4);
+		_BSS_END = .;
+	}> SRAM
+   
+  _Stack_Top = . + 0x1000; 
+
+}
